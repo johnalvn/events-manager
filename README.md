@@ -1,0 +1,1 @@
+A really simple events manager written in Node.js as test for an express-mongoose-jade based stack
