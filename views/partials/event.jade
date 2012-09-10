@@ -1,0 +1,5 @@
+div.event
+  div.created_at= event.created_at
+  h2.title 
+    a(href="/events/"+event._id)!= event.title
+  div.body= event.body

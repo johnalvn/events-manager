@@ -1,0 +1,13 @@
+extends ../layout
+block content
+  h1 New event
+  form(method="post", action="/events")
+    div
+      div
+        div Title:
+        input(type="text", name="title", id="editEventTitle")
+      div
+        div Body:
+        textarea( name="body", rows=20, id="editEventBody")
+        div#editEventSubmit
+        input(type="submit", value="Send")

@@ -1,0 +1,7 @@
+extends ../layout
+block content
+  h1 Events
+  if events.length > 0
+    each event in events
+      include ../partials/event
+  end
