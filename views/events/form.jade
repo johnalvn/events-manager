@@ -1,0 +1,31 @@
+- var action = ''
+- if (typeof request.params.id != 'undefined'){
+-   action = '/events/' + request.params.id
+- }
+- else {
+-   action = '/events'  
+- }
+block append head
+  script(src='/javascripts/jquery.js')
+  script(src='/javascripts/jquery-ui.js')
+  script(type='text/javascript')
+    // $(document).ready(function(){
+    //   $('#editEventDate').datepicker();
+    // });
+form(method="post", action=action)
+  div
+    div Title:
+    div
+      input(type="text", name="title", id="editEventTitle", value=event.title)
+    div Place:
+      div
+        input(type="text", name="place", id="editEventPlace", value=event.place)
+    div Date (dd/mm/yyyy hh:mm):
+      div
+        input(type="text", name="date", id="editEventDate", value=event.date)
+    div Description:
+      div
+        textarea(name="description", rows=20, id="editEventDescription")= event.description
+  div#editEventSubmit
+      input(type="submit", value="Send")
+      

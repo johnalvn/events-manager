@@ -1,5 +1,13 @@
 div.event
-  div.created_at= event.created_at
   h2.title 
     a(href="/events/"+event._id)!= event.title
-  div.body= event.body
+  div.date= event.date
+  div.place= event.place
+  div.description= event.description
+  div.actions
+    form(action='/events/' + event._id, method='post')
+      input(type='hidden', name='_method', value='delete')
+      input(type='submit', value='Delete')
+    form(action='/events/' + event._id + '/edit', method='get')
+      input(type='submit', value='Edit')
+  

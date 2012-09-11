@@ -43,6 +43,9 @@ app.get('/events', routes.events.index)
 app.get('/events/new', routes.events.new)
 app.post('/events', routes.events.create)
 app.get('/events/:id', routes.events.show)
+app.get('/events/:id/edit', routes.events.edit)
+app.post('/events/:id', routes.events.update)
+app.delete('/events/:id', routes.events.destroy)
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
